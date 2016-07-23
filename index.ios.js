@@ -31,7 +31,7 @@ class AwesomeProject extends Component {
         <Text style={styles.welcome}>
           Koren Leslie Cohen
         </Text>
-        <Text style={styles.instructions}>
+        <Text>
           To get started, edit index.ios.js
         </Text>
         <Text style={styles.instructions}>
@@ -39,7 +39,7 @@ class AwesomeProject extends Component {
           Cmd+D or shake for dev menu
         </Text>
       <TouchableHighlight onPress={this._onPressButton}>
-        <Text>Button</Text>
+        <Text style={styles.button}>Button</Text>
       </TouchableHighlight>
       </View>
     );
@@ -77,6 +77,9 @@ const styles = StyleSheet.create({
   },
   button: {
     color: 'hotpink',
+    backgroundColor: 'black',
+    padding: 10,
+    borderRadius: 10,
   },
 });
 
