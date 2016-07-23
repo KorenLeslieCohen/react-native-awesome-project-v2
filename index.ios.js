@@ -12,14 +12,19 @@ import {
   StyleSheet,
   Text,
   Image,
-  View
+  View, 
+  TouchableHighlight
 } from 'react-native';
 
 class AwesomeProject extends Component {
+  _onPressButton() {
+    console.log("You tapped the button!");
+  }
   render() {
     let pic = {
       uri: 'https://upload.wikimedia.org/wikipedia/commons/d/de/Bananavarieties.jpg'
     };
+
     return ( 
       <View style={styles.container}>
       <Image source={pic} style={{width: 193, height: 110}}/>
@@ -33,6 +38,9 @@ class AwesomeProject extends Component {
           Press Cmd+R to reload,{'\n'}
           Cmd+D or shake for dev menu
         </Text>
+      <TouchableHighlight onPress={this._onPressButton}>
+        <Text>Button</Text>
+      </TouchableHighlight>
       </View>
     );
   }
