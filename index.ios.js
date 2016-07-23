@@ -5,10 +5,13 @@
  */
 
 import React, { Component } from 'react';
+// import { AppRegistry, Image } from 'react-native';
+
 import {
   AppRegistry,
   StyleSheet,
   Text,
+  Image,
   View
 } from 'react-native';
 
@@ -17,7 +20,7 @@ class AwesomeProject extends Component {
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>
-          Welcome to React Native!
+          Koren Leslie Cohen
         </Text>
         <Text style={styles.instructions}>
           To get started, edit index.ios.js
@@ -31,9 +34,53 @@ class AwesomeProject extends Component {
   }
 }
 
+class Test extends Component {
+  render() {
+    return (
+      <View style={styles.container}>
+        <Text style={styles.welcome}>
+          Test module
+        </Text>
+        <Text style={styles.instructions}>
+          To get started, edit index.ios.js
+        </Text>
+        <Text style={styles.instructions}>
+          Press Cmd+R to reload,{'\n'}
+          Cmd+D or shake for dev menu
+        </Text>
+      </View>
+    );
+  }
+}
+
+class MyButton extends Component {
+  _onPressButton() {
+    console.log("You tapped the button!");
+  }
+
+  render() {
+    return (
+      <TouchableHighlight onPress={this._onPressButton}>
+        <Text style={styles.button}>Button</Text>
+      </TouchableHighlight>
+    );
+  }
+}
+
+class Bananas extends Component {
+  render() {
+    let pic = {
+      uri: 'https://upload.wikimedia.org/wikipedia/commons/d/de/Bananavarieties.jpg'
+    };
+    return ( 
+      <Image source={pic} style={{width: 193, height: 110}}/>
+    );
+  }
+}
+
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    // flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#F5FCFF',
@@ -42,12 +89,20 @@ const styles = StyleSheet.create({
     fontSize: 20,
     textAlign: 'center',
     margin: 10,
+    color: 'hotpink',
   },
   instructions: {
     textAlign: 'center',
     color: '#333333',
     marginBottom: 5,
   },
+  button: {
+    color: 'hotpink',
+  },
 });
 
+
 AppRegistry.registerComponent('AwesomeProject', () => AwesomeProject);
+AppRegistry.registerComponent('Test', () => Test);
+AppRegistry.registerComponent('MyButton', () => MyButton);
+AppRegistry.registerComponent('Bananas', () => Bananas);
